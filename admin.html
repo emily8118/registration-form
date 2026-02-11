@@ -232,7 +232,7 @@
                         <th>Email</th>
 						<th>Phone</th>
 						<th>Version</th>
-						<th>Send Updates</th>
+
                         <th>Registered At</th>
                         <th>ID</th>
                     </tr>
@@ -283,7 +283,7 @@
                             <td>${escapeHtml(reg.email)}</td>
 							<td>${escapeHtml(reg.phone)}</td>
 							<td>${escapeHtml(reg.version)}</td>
-							<td>${escapeHtml(reg.sendupdate)}</td>
+
                             <td>${formatDate(reg.registeredAt)}</td>							
                             <td>${escapeHtml(reg.id)}</td>
                         `;
@@ -321,7 +321,7 @@
                     `"${reg.email}"`,
 					`"${reg.phone || ''}"`,
 					`"${reg.version}"`,
-					`"${reg.sendupdate}"`,
+
                     `"${formatDate(reg.registeredAt)}"`,
                     `"${reg.id}"`
                 ];
@@ -347,7 +347,7 @@
                 'Email': reg.email,
 				'Phone': reg.phone || '',
 				'version': reg.version,
-				'sendupdate': reg.sendupdate,
+
                 'Registered At': formatDate(reg.registeredAt),
                 'ID': reg.id
             }));
@@ -362,7 +362,7 @@
                 { wch: 30 },  // Email
 				{ wch: 18 },  // Phone
 				{ wch: 20 },  // version
-				{ wch: 10 },  // sendupdate				
+					
                 { wch: 20 },  // Registered At
                 { wch: 40 }   // ID
             ];
