@@ -158,6 +158,7 @@
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+			const phone = document.getElementById('phone').value;
 
             // Disable button during submission
             submitBtn.disabled = true;
@@ -169,7 +170,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ name, email })
+                    body: JSON.stringify({ name, email,phone })
                 });
 
                 const data = await response.json();
