@@ -57,7 +57,7 @@ export async function onRequestPost(context) {
             const { name, email, phone} = data;
 
             // Validate input
-            if (!name || !email || !phone) {
+            if (!name || !email) {
                 return new Response(JSON.stringify({
                     error: 'Name and email are required'
                 }), {
