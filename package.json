@@ -1,0 +1,21 @@
+{
+  "name": "cloudflare-registration-form",
+  "version": "1.0.0",
+  "description": "Registration form using Cloudflare Pages, Workers, and KV",
+  "main": "index.html",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy ."
+  },
+  "keywords": [
+    "cloudflare",
+    "pages",
+    "workers",
+    "kv"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

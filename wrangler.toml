@@ -1,0 +1,12 @@
+name = "registration-form"
+compatibility_date = "2024-01-01"
+
+# This file is optional for Pages projects
+# KV bindings are typically configured in the Cloudflare Dashboard
+# But you can use this for local development
+
+# Uncomment and add your KV namespace IDs for local development
+# [[kv_namespaces]]
+# binding = "REGISTRATIONS"
+# id = "YOUR_KV_NAMESPACE_ID"
+# preview_id = "YOUR_PREVIEW_KV_NAMESPACE_ID"
