@@ -231,7 +231,6 @@
                         <th>Name</th>
                         <th>Email</th>
 						<th>Phone</th>
-						<!--<th>Version</th>-->
                         <th>Registered At</th>
                         <th>ID</th>
                     </tr>
@@ -281,8 +280,6 @@
                             <td>${escapeHtml(reg.name)}</td>
                             <td>${escapeHtml(reg.email)}</td>
 							<td>${escapeHtml(reg.phone)}</td>
-		
-
                             <td>${formatDate(reg.registeredAt)}</td>							
                             <td>${escapeHtml(reg.id)}</td>
                         `;
@@ -319,8 +316,6 @@
                     `"${reg.name}"`,
                     `"${reg.email}"`,
 					`"${reg.phone || ''}"`,
-
-
                     `"${formatDate(reg.registeredAt)}"`,
                     `"${reg.id}"`
                 ];
@@ -345,8 +340,6 @@
                 'Name': reg.name,
                 'Email': reg.email,
 				'Phone': reg.phone || '',
-
-
                 'Registered At': formatDate(reg.registeredAt),
                 'ID': reg.id
             }));
@@ -359,9 +352,7 @@
             ws['!cols'] = [
                 { wch: 25 },  // Name
                 { wch: 30 },  // Email
-				{ wch: 18 },  // Phone
-
-					
+				{ wch: 18 },  // Phone					
                 { wch: 20 },  // Registered At
                 { wch: 40 }   // ID
             ];
