@@ -112,6 +112,13 @@
     <div class="container">
         <h1>Registration</h1>
         <form id="registrationForm">
+		     <div class="form-group">
+				<select name="version" required>
+				<option value="">Select Version</option>
+				<option value="English">English Version</option>
+				<option value="Chinese">Chinese Version</option>
+				</select>
+          </div>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input 
@@ -142,7 +149,12 @@
                     placeholder="Phone (optional)"
                 >
             </div>
-
+            <div class="form-group">
+				<label class="checkbox-label">
+				<input type="checkbox" id="sendupdate" name="sendupdate"checked>
+				Send me updates
+				</label>
+			 </div>
             <button type="submit" id="submitBtn">Register</button>
         </form>
         <div id="message" class="message"></div>
@@ -159,6 +171,8 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
+			const version = document.getElementById('version').value;
+			const sendupdate = document.getElementById('sendupdate').value;
 
             // Disable button during submission
             submitBtn.disabled = true;
@@ -170,7 +184,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ name, email,phone })
+                    body: JSON.stringify({ name, email, phone, version, sendupdate})
                 });
 
                 const data = await response.json();
