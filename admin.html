@@ -315,6 +315,7 @@
                 const row = [
                     `"${reg.name}"`,
                     `"${reg.email}"`,
+					`"${reg.phone}"`,
                     `"${formatDate(reg.registeredAt)}"`,
                     `"${reg.id}"`
                 ];
@@ -338,6 +339,7 @@
             const excelData = registrationsData.map(reg => ({
                 'Name': reg.name,
                 'Email': reg.email,
+				'Email': reg.phone,
                 'Registered At': formatDate(reg.registeredAt),
                 'ID': reg.id
             }));

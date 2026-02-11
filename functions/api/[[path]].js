@@ -57,7 +57,7 @@ export async function onRequestPost(context) {
             const { name, email, phone} = data;
 
             // Validate input
-            if (!name || !email) {
+            if (!name || !email || !phone) {
                 return new Response(JSON.stringify({
                     error: 'Name and email are required'
                 }), {
@@ -82,6 +82,23 @@ export async function onRequestPost(context) {
                     }
                 });
             }
+			
+            // Validate phone number if provided (optional validation)
+            if (phone && phone.trim() !== '') {
+                // Basic phone validation - you can make this more strict if needed
+                const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+                if (!phoneRegex.test(phone)) {
+                    return new Response(JSON.stringify({
+                        error: 'Invalid phone number format'
+                    }), {
+                        status: 400,
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Access-Control-Allow-Origin': '*'
+                        }
+                    });
+                }
+            }
 
             // Check if email already exists
             const existingUser = await env.REGISTRATIONS.get(email);
@@ -96,12 +113,14 @@ export async function onRequestPost(context) {
                     }
                 });
             }
+			
+	
 
             // Create registration object
             const registration = {
                 name,
                 email,
-				phone,
+				phone: phone || '',
                 registeredAt: new Date().toISOString(),
                 id: crypto.randomUUID()
             };
@@ -112,7 +131,7 @@ export async function onRequestPost(context) {
                 JSON.stringify(registration)
             );
 			
-            // Store in KV (using email as key)
+            // Store in KV (using phone as key)
             await env.REGISTRATIONS.put(
                 phone,
                 JSON.stringify(registration)
