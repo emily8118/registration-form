@@ -308,14 +308,14 @@
             }
 
             // Create CSV content
-            const headers = ['Name', 'Email', 'Registered At', 'ID'];
+            const headers = ['Name', 'Email','phone', 'Registered At', 'ID'];
             const csvRows = [headers.join(',')];
 
             registrationsData.forEach(reg => {
                 const row = [
                     `"${reg.name}"`,
                     `"${reg.email}"`,
-					`"${reg.phone}"`,
+					`"${reg.phone || ''}"`,
                     `"${formatDate(reg.registeredAt)}"`,
                     `"${reg.id}"`
                 ];
@@ -339,7 +339,7 @@
             const excelData = registrationsData.map(reg => ({
                 'Name': reg.name,
                 'Email': reg.email,
-				'Email': reg.phone,
+				'Phone': reg.phone || '',
                 'Registered At': formatDate(reg.registeredAt),
                 'ID': reg.id
             }));
@@ -352,6 +352,7 @@
             ws['!cols'] = [
                 { wch: 25 },  // Name
                 { wch: 30 },  // Email
+				{ wch: 18 },  // Phone
                 { wch: 20 },  // Registered At
                 { wch: 40 }   // ID
             ];

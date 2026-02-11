@@ -131,11 +131,6 @@ export async function onRequestPost(context) {
                 JSON.stringify(registration)
             );
 			
-            // Store in KV (using phone as key)
-            await env.REGISTRATIONS.put(
-                phone,
-                JSON.stringify(registration)
-            );
 			
             return new Response(JSON.stringify({
                 success: true,
