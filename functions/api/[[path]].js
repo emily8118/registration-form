@@ -101,6 +101,7 @@ export async function onRequestPost(context) {
             const registration = {
                 name,
                 email,
+				phone,
                 registeredAt: new Date().toISOString(),
                 id: crypto.randomUUID()
             };
