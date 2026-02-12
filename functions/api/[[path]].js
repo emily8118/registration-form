@@ -54,7 +54,7 @@ export async function onRequestPost(context) {
         try {
             // Parse the incoming JSON data
             const data = await request.json();
-            const { version, name, email, phone} = data;
+            const { version, name, email, phone, sendupdate} = data;
 
             // Validate input
             if (!name || !email) {
@@ -122,6 +122,7 @@ export async function onRequestPost(context) {
                 name,
                 email,
 				phone: phone || '',
+				sendupdate: sendupdate || false,
                 registeredAt: new Date().toISOString(),
                 id: crypto.randomUUID()
             };
