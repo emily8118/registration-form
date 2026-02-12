@@ -112,6 +112,15 @@
     <div class="container">
         <h1>Registration</h1>
         <form id="registrationForm">
+            <!-- Dropdown - Country -->
+            <div class="form-group">
+                <label for="version">Country <span class="required">*</span></label>
+                <select id="version" name="version" required>
+                    <option value="">-- Select version --</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input 
@@ -155,10 +164,11 @@
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+            const version = document.getElementById('version').value;
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
+			
 
             // Disable button during submission
             submitBtn.disabled = true;
@@ -170,7 +180,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ name, email,phone })
+                    body: JSON.stringify({ version, name, email,phone })
                 });
 
                 const data = await response.json();
