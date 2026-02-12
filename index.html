@@ -195,17 +195,19 @@
         const messageDiv = document.getElementById('message');
         const submitBtn = document.getElementById('submitBtn');
 
-		var sendupdate= "";
+		var sendupdate = '';
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const version = document.getElementById('version').value;
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
-			if (document.getElementById('sendupdate').checked)
-				sendupdate = "yes2";
-			else
-				sendupdate = "no";
+			if (document.getElementById('sendupdate').checked){
+				sendupdate = 'YES';
+			}else{
+				sendupdate = 'NO';
+			}
+			console.log('sendupdate=' + sendupdate);
             //const sendupdate = document.getElementById('sendupdate').checked;			
 
             // Disable button during submission
