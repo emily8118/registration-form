@@ -112,7 +112,6 @@
     <div class="container">
         <h1>Registration</h1>
         <form id="registrationForm">
-
             <div class="form-group">
                 <label for="name">Name</label>
                 <input 
@@ -161,7 +160,6 @@
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
 
-
             // Disable button during submission
             submitBtn.disabled = true;
             submitBtn.textContent = 'Registering...';
@@ -172,7 +170,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ name, email, phone})
+                    body: JSON.stringify({ name, email,phone })
                 });
 
                 const data = await response.json();
