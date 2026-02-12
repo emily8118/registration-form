@@ -228,9 +228,11 @@
                 <thead>
                     <tr>
                         <th>#</th>
+						<th>Version</th>
                         <th>Name</th>
                         <th>Email</th>
 						<th>Phone</th>
+						<th>Send Update</th>
                         <th>Registered At</th>
                         <th>ID</th>
                     </tr>
@@ -277,9 +279,11 @@
                         const row = document.createElement('tr');
                         row.innerHTML = `
                             <td>${index + 1}</td>
+							<td>${escapeHtml(reg.version)}</td>
                             <td>${escapeHtml(reg.name)}</td>
                             <td>${escapeHtml(reg.email)}</td>
 							<td>${escapeHtml(reg.phone)}</td>
+							<td>${escapeHtml(reg.sendupdate)}</td>
                             <td>${formatDate(reg.registeredAt)}</td>							
                             <td>${escapeHtml(reg.id)}</td>
                         `;
@@ -313,9 +317,11 @@
 
             registrationsData.forEach(reg => {
                 const row = [
+					`"${reg.version}"`,
                     `"${reg.name}"`,
                     `"${reg.email}"`,
 					`"${reg.phone || ''}"`,
+					`"${reg.sendupdate}"`,
                     `"${formatDate(reg.registeredAt)}"`,
                     `"${reg.id}"`
                 ];
@@ -337,9 +343,11 @@
 
             // Prepare data for Excel
             const excelData = registrationsData.map(reg => ({
-                'Name': reg.name,
+                'Version': reg.version,
+				'Name': reg.name,
                 'Email': reg.email,
 				'Phone': reg.phone || '',
+				'SendUpdate': reg.sendupdate || '',
                 'Registered At': formatDate(reg.registeredAt),
                 'ID': reg.id
             }));
@@ -350,9 +358,11 @@
 
             // Set column widths
             ws['!cols'] = [
+				{ wch: 20 },  // Version
                 { wch: 25 },  // Name
                 { wch: 30 },  // Email
 				{ wch: 18 },  // Phone
+				{ wch: 10 },  // sendupdate
                 { wch: 20 },  // Registered At
                 { wch: 40 }   // ID
             ];
