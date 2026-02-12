@@ -201,7 +201,11 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
-            const sendupdate = document.getElementById('sendupdate').checked;			
+			if (document.getElementById('sendupdate').checked)
+				const sendupdate = "yes"
+			else
+				const sendupdate = ""
+            //const sendupdate = document.getElementById('sendupdate').checked;			
 
             // Disable button during submission
             submitBtn.disabled = true;
