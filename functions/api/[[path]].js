@@ -54,7 +54,7 @@ export async function onRequestPost(context) {
         try {
             // Parse the incoming JSON data
             const data = await request.json();
-            const { name, email, phone} = data;
+            const { version, name, email, phone} = data;
 
             // Validate input
             if (!name || !email) {
@@ -118,6 +118,7 @@ export async function onRequestPost(context) {
 
             // Create registration object
             const registration = {
+				version,
                 name,
                 email,
 				phone: phone || '',
