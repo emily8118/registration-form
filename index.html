@@ -60,6 +60,32 @@
             outline: none;
             border-color: #667eea;
         }
+		
+        /* Checkbox styling */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+        }
 
         button {
             width: 100%;
@@ -151,6 +177,13 @@
                     placeholder="Phone (optional)"
                 >
             </div>
+            <!-- Single Checkbox - Newsletter (optional) -->
+            <div class="form-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="sendupdate" name="sendupdate">
+                    <label for="newsletter">Subscribe to newsletter</label>
+                </div>
+            </div>
 
             <button type="submit" id="submitBtn">Register</button>
         </form>
@@ -168,7 +201,7 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
-			
+            const sendupdate = document.getElementById('sendupdate').checked;			
 
             // Disable button during submission
             submitBtn.disabled = true;
@@ -180,7 +213,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ version, name, email,phone })
+                    body: JSON.stringify({ version, name, email,phone, sendupdate})
                 });
 
                 const data = await response.json();
