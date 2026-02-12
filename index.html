@@ -195,6 +195,7 @@
         const messageDiv = document.getElementById('message');
         const submitBtn = document.getElementById('submitBtn');
 
+		var sendupdate= "";
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const version = document.getElementById('version').value;
@@ -202,9 +203,9 @@
             const email = document.getElementById('email').value;
 			const phone = document.getElementById('phone').value;
 			if (document.getElementById('sendupdate').checked)
-				const sendupdate = "yes"
+				sendupdate = "yes";
 			else
-				const sendupdate = ""
+				sendupdate = "";
             //const sendupdate = document.getElementById('sendupdate').checked;			
 
             // Disable button during submission
