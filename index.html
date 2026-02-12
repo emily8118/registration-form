@@ -1,197 +1,217 @@
-<!DOCTYPE html>
+<DOCUMENT filename="index.html">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e1e1e1;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-		
-        /* Checkbox styling */
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            accent-color: #667eea;
-        }
-
-        .checkbox-item label {
-            margin: 0;
-            cursor: pointer;
-            font-weight: 400;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .message {
-            margin-top: 20px;
-            padding: 12px;
-            border-radius: 5px;
-            text-align: center;
-            display: none;
-        }
-
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>True North Visionary Press</title>
+<style>
+body {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+background-color: #ffffff;
+color: #001f3f; /* Dark blue */
+}
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 3px 40px;
+background-color: #001f3f; /* Dark blue */
+color: #ffffff;
+}
+.logo {
+display: flex;
+align-items: center;
+}
+.logo img {
+width: 300px; /* Adjust size as needed */
+height: auto;
+margin-right: 10px;
+}
+.logo-text {
+display: flex;
+flex-direction: column;
+}
+.logo h1 {
+margin: 0;
+font-size: 24px;
+}
+.logo p {
+margin: 0;
+font-size: 14px;
+}
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+nav ul li {
+margin-left: 20px;
+}
+nav ul li a {
+color: #ffffff;
+text-decoration: none;
+font-size: 16px;
+}
+.hero {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 60px 40px 30px 40px; /* Reduced bottom padding */
+text-align: center;
+}
+.book-covers {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+}
+.book-cover {
+width: 300px;
+height: auto;
+margin: 0 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 600px) {
+.book-covers {
+flex-direction: column;
+}
+.book-cover {
+width: 100%;
+max-width: 300px;
+margin: 10px 0;
+}
+}
+.hero h2 {
+margin: 0 0 10px;
+font-size: 32px;
+}
+.hero .subtitle {
+margin: 0 0 40px;
+font-size: 18px;
+}
+.description {
+margin: 0 0 20px; /* Reduced bottom margin */
+font-size: 18px;
+text-align: left;
+max-width: 800px;
+}
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 400px;
+margin: 0 auto;
+}
+select,
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #001f3f;
+border-radius: 4px;
+font-size: 16px;
+}
+.checkbox-label {
+display: flex;
+align-items: center;
+margin-bottom: 15px;
+font-size: 16px;
+}
+input[type="checkbox"] {
+margin-right: 10px;
+}
+button {
+padding: 10px 20px;
+background-color: #001f3f;
+color: #ffffff;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+}
+button:hover {
+background-color: #003366;
+}
+.toast {
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+background-color: #001f3f;
+color: #ffffff;
+padding: 10px 20px;
+border-radius: 4px;
+display: none;
+font-size: 16px;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Registration</h1>
-        <form id="registrationForm">
-            <!-- Dropdown - Country -->
-            <div class="form-group">
-                <label for="version">Country <span class="required">*</span></label>
-                <select id="version" name="version" required>
-                    <option value="">-- Select version --</option>
-                    <option value="UK">United Kingdom</option>
-                    <option value="CA">Canada</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    required 
-                    placeholder="Enter your full name"
-                >
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required 
-                    placeholder="Enter your email"
-                >
-            </div>
-            <div class="form-group">
-                <label for="tel">Phone</label>
-                <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    required 
-                    placeholder="Phone (optional)"
-                >
-            </div>
-            <!-- Single Checkbox - Newsletter (optional) -->
-            <div class="form-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="sendupdate" name="sendupdate">
-                    <label for="newsletter">Subscribe to newsletter</label>
-                </div>
-            </div>
-
-            <button type="submit" id="submitBtn">Register</button>
-        </form>
-        <div id="message" class="message"></div>
-    </div>
-
-    <script>
-        const form = document.getElementById('registrationForm');
+<header>
+<div class="logo">
+<img src="logo.png" alt="True North Visionary Press Logo">
+<div class="logo-text">
+<!-- <h3>Publishing Ideas That Point the Way</h3>-->
+<p><font size="5"> Innovation. Creativity. Foresight</font><p>
+</div>
+</div>
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Books</a></li>
+<li><a href="#">About</a></li>
+</ul>
+</nav>
+</header>
+<section class="hero">
+<div class="book-covers">
+<video src="AI Era.mp4" class="book-cover" autoplay loop muted playsinline>
+<p>Your browser does not support the video tag.</p>
+</video>
+<video src="AI Era Practice Edition.mp4" class="book-cover" autoplay loop muted playsinline>
+<p>Your browser does not support the video tag.</p>
+</video>
+</div>
+<h2>AI Era: Redefining Teaching & Learning</h2>
+<p class="subtitle">How artificial intelligence reshapes what we know</p>
+<div class="description">
+<p>AI Makes Answers Cheap—But Education More Urgent.</p>
+<p>In AI Era: Redefining Teaching and Learning by Paul Pu and Jim Slotta, explore generative AI's classroom disruptions: instant essays and solutions, yet gaps in truth verification, focus, and purpose.</p>
+<p>Critiquing "knowledge-and-skills factory" models amplified by AI, it introduces Hands-on Intelligence and Anchored Learning for real-world grounding in evidence, iteration, and responsibility.</p>
+<p>Immediate tools:</p>
+<ul>
+<li>Anchor–Sail–Evidence Chain tasks</li>
+<li>Process-based assessment</li>
+<li>Governance for privacy/equity</li>
+</ul>
+<p>Order today—reclaim meaningful learning!</p>
+</div>
+</section>
+<form id="waitlist-form">
+<select name="version" required>
+<option value="">Select Version</option>
+<option value="English">English Version</option>
+<option value="Chinese">Chinese Version</option>
+</select>
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone (optional)">
+<label class="checkbox-label">
+<input type="checkbox"  id="sendupdate" name="sendupdate" checked>
+Send me updates
+</label>
+<button type="submit"  id="submitBtn">Join Waitlist</button>
+</form>
+<!--<div class="toast" id="toast">Thanks, you’re on the list</div>-->
+<div id="message" class="message"></div>
+<script>
+//***********start
+        const form = document.getElementById('waitlist-form');
         const messageDiv = document.getElementById('message');
         const submitBtn = document.getElementById('submitBtn');
 
@@ -207,8 +227,8 @@
 			}else{
 				sendupdate = 'NO';
 			}
-			console.log('sendupdate=' + sendupdate);
-            //const sendupdate = document.getElementById('sendupdate').checked;			
+			//console.log('sendupdate=' + sendupdate);
+            		
 
             // Disable button during submission
             submitBtn.disabled = true;
@@ -248,6 +268,18 @@
                 messageDiv.style.display = 'none';
             }, 5000);
         }
-    </script>
+
+//***********end
+//const form = document.getElementById('waitlist-form');
+//const toast = document.getElementById('toast');
+//form.addEventListener('submit', function(event) {
+//event.preventDefault();
+//toast.style.display = 'block';
+//setTimeout(() => {
+//toast.style.display = 'none';
+//}, 3000);
+//form.reset();
+//});
+</script>
 </body>
-</html>
+</html></DOCUMENT>
